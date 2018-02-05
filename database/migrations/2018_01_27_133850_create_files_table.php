@@ -19,7 +19,7 @@ class CreateFilesTable extends Migration
             $table->string('file_name');
             $table->integer('type')->unsigned()->nullable();
             $table->integer('class')->unsigned()->nullable();
-            $table->bigInteger('subject')->unsigned()->nullable();
+            $table->integer('subject')->unsigned()->nullable();
             $table->timestamps();
         });
     }

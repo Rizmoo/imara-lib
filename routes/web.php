@@ -25,3 +25,6 @@ Route::resource('subjects', 'SubjectController');
 Route::resource('files', 'FileController');
 
 Route::get('subcat', 'CategoryController@subcat');
+
+Route::get('/items', 'HomeController@items');
+Route::get('/download', 'HomeController@download');

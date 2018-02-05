@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Storage;
+use League\Flysystem\Adapter\Local;
 
 class HomeController extends Controller
 {
@@ -23,6 +28,25 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $categories = Category::where('parent_id', null)->get();
+        return view('home', compact('categories'));
+    }
+    public function items(Request $request)
+    {
+        $id =(int)$request->get('ref');
+        $categories = Category::where('parent_id', $id)->get();
+        if ($categories ->count() == 0){
+           $files = File::where('subject',$id)->get();
+            return view('download', compact('files'));
+        }
+        return view('items', compact('categories'));
+    }
+    public function download(Request $request)
+    {
+        $id =(int)$request->get('ref');
+        $file = File::where('id',$id)->first();
+        $pathToFile =Storage::url($file->file_name);
+        return response()->download($pathToFile);
+
     }
 }

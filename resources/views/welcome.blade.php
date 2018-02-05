@@ -61,7 +61,6 @@
                 </div> <!-- /col -->
             </div> <!--end row -->
 
-
             <div class="row">
                 <div class="col-sm-4">
                     <div class="service-item animated fadeInLeft wow animated" data-wow-delay=".7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInLeft;">

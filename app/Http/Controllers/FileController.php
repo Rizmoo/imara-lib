@@ -52,6 +52,7 @@ class FileController extends Controller
 
         if(Input::hasFile('file'))
         {
+//            dd($request->all());
             $type = Input::get('type');
             Category::find('id');
             $file = Input::file('file');
@@ -59,11 +60,14 @@ class FileController extends Controller
             $extension = $file->getClientOriginalExtension();
             Storage::disk('local')->put($file->getClientOriginalName(),  File::get($file));
 
+
             $entry = new \App\File();
 
-            $entry->file_name = $file->getClientOriginalName();
-            $entry->file_name = Input::get('title');
-
+            $entry->file_name ='uploads'. $file->getClientOriginalName();
+            $entry->title = Input::get('title');
+            $entry->type = Input::get('type');
+            $entry->class = Input::get('class');
+            $entry->subject = Input::get('subject');
             $entry->save();
 
 
