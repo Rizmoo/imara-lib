@@ -43,10 +43,16 @@ class HomeController extends Controller
     }
     public function download(Request $request)
     {
-        $id =(int)$request->get('ref');
-        $file = File::where('id',$id)->first();
-        $pathToFile =Storage::url($file->file_name);
-        return response()->download($pathToFile);
+        try {
+            $id =(int)$request->get('ref');
+            $file = File::where('id',$id)->first()->file_name;
+            return Storage::download($file);
+        }
+
+        catch(\Exception $e) {
+            return redirect()->back()
+                ->with('message', 'file could not be found');
+        }
 
     }
 }

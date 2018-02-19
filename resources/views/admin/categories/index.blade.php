@@ -1,19 +1,21 @@
 @extends('layouts.base')
+@section('styles')
+    <link href="{{asset('theme/plugins/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('theme/plugins/datatables/buttons.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
+@endsection
 
 @section('content')
-    <section class="section bg-gray" id="services">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    <h1 class="title zoomIn animated wow animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: zoomIn;">Best Services</h1>
-                    <p class="sub-title zoomIn animated wow animated" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: zoomIn;">Constituto voluptatibus mei ex. Eum soleat lorem Ipsum is simply dummy<br> text of the printing and typesetting industry. </p>
+    <div class="row">
+        <div class="col-12">
+            <div class="card-box table-responsive">
+                <div class="card-header">
+                    <h4 class="m-t-0 header-title"><b>Categories</b></h4>
+                    <p class="text-muted font-13 m-b-30">
+                        <a href="{{route('categories.create')}}" class="btn btn-outline-info btn-sm pull-right">New</a>
+                    </p>
                 </div>
-            </div>
-
-            <div class="row">
-                <table class="table table-bordered">
-                    <thead class="bg-dark" style="color: white">
+                <table id="datatable" class="table table-bordered">
+                    <thead>
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
@@ -31,7 +33,7 @@
                             @if($item->parent_id == null)
                                 <td>No Parent</td>
                             @else
-                                <td>{{$item ->parent -> name}}</td>
+                                <td>{{$item ->parent -> title}}</td>
                             @endif
                             <td>
                                 <a class="btn btn-info btn-xs "
@@ -41,9 +43,19 @@
                     @endforeach
                     </tbody>
                 </table>
-            </div> <!--end row -->
-
-
+            </div>
         </div>
-    </section>
+    </div> <!-- end row -->
+@endsection
+@section('scripts')
+    <script src="{{asset('theme/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('theme/plugins/datatables/dataTables.bootstrap4.min.js')}}"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#datatable').DataTable()
+        } );
+
+    </script>
+
 @endsection

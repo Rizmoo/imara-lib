@@ -43,27 +43,29 @@ class FileController extends Controller
      */
     public function store(Request $request)
     {
+
+
+
         $this->validate($request, [
 
             'file' => "required|mimes:pdf,doc,docx|max:10000",
 
         ]);
 
-
+//        dd($request->all());
         if(Input::hasFile('file'))
         {
-//            dd($request->all());
             $type = Input::get('type');
             Category::find('id');
-            $file = Input::file('file');
 
-            $extension = $file->getClientOriginalExtension();
-            Storage::disk('local')->put($file->getClientOriginalName(),  File::get($file));
-
+            $path = $request->file('file')->storeAs(
+                'uploads', $request->get('title')
+            );
+//            $path = $request->file('file')->store('uploads');
 
             $entry = new \App\File();
 
-            $entry->file_name ='uploads'. $file->getClientOriginalName();
+            $entry->file_name = $path;
             $entry->title = Input::get('title');
             $entry->type = Input::get('type');
             $entry->class = Input::get('class');
@@ -123,6 +125,6 @@ class FileController extends Controller
      */
     public function destroy($id)
     {
-        //
+//        Storage::delete('file.jpg');
     }
 }

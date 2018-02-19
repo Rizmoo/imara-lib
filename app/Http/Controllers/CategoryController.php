@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use phpDocumentor\Reflection\Types\Integer;
@@ -62,7 +63,12 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        $kids = Category::where('parent_id', $category->id)->get();
+        if ($kids ->count() == 0){
+            $files = File::where('subject',$category->id)->get();
+            return view('download', compact('files'));
+        }
+       return view('admin.categories.show', compact('category','kids'));
     }
 
     /**

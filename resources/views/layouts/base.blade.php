@@ -1,208 +1,194 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
+<!-- Mirrored from coderthemes.com/adminox/b4/horizontal/page-starter.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Feb 2018 11:34:05 GMT -->
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Coderthemes">
-    <link rel="shortcut icon" href="images/favicon.ico">
+    <meta charset="utf-8" />
+    <title>Imara Lib - Teacher Helper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>Lugada - Landing Page</title>
+    <link rel="shortcut icon" href="{{asset('theme/assets/images/favicon.ico')}}">
+@yield('styles')
+    <!-- App css -->
+    <link href="{{asset('theme/assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('theme/assets/css/icons.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('theme/assets/css/style.css')}}" rel="stylesheet" type="text/css" />
 
-    <!-- Bootstrap core CSS -->
-    <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
+    <script src="{{asset('theme/assets/js/modernizr.min.js')}}"></script>
 
-    <!-- Animate -->
-    <link href="{{asset('assets/css/animate.css')}}" rel="stylesheet">
-
-    <!-- Magnific-popup -->
-    <link rel="stylesheet" href="{{asset('assets/css/magnific-popup.css')}}">
-
-    <!-- flex slider css -->
-    <link href="{{asset('assets/css/flexslider.css')}}" rel="stylesheet" type="text/css" media="screen">
-
-    <!-- Icon-font -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/ionicons.min.css')}}">
-
-    <!-- Custom styles for this template -->
-    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css" />
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
 </head>
+
 
 <body>
 
 
-<div class="navbar navbar-custom navbar-fixed-top" role="navigation">
-    <div class="container">
-        <!-- Navbar-header -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <i class="ion-navicon"></i>
-            </button>
-            <!-- LOGO -->
-            <a class="navbar-brand logo" href="{{url('/')}}}">
-                <i class="ion-ios-book"></i>
-                <span>IMARA LIB</span>
-            </a>
-        </div>
-        <!-- end navbar-header -->
+<!-- Navigation Bar-->
+<header id="topnav">
+    <div class="topbar-main">
+        <div class="container">
 
-        <!-- menu -->
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#features">Features</a>
-                </li>
-                <li class="dropdown">
-                    <a href="#" data-toggle="dropdown">
-                        Categories
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu arrow">
-                        <li><a href="{{route('categories.create')}}">Create</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" data-toggle="dropdown">
-                        Classes
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu arrow">
-                        <li><a href="{{route('classes.create')}}">Classes</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" data-toggle="dropdown">
-                        Subjects
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu arrow">
-                        <li><a href="{{route('subjects.create')}}">Create Subject</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" data-toggle="dropdown">
-                        Files
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu arrow">
-                        <li><a href="{{route('files.create')}}">Files</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <!--/Menu -->
+            <!-- Logo container-->
+            <div class="logo">
+                <!-- Text Logo -->
+                <a href="{{url('/')}}" class="logo">
+                Imara Lib
+                </a>
+                <!-- Image Logo -->
+                {{--<a href="index.html" class="logo">--}}
+                    {{--<img src="assets/images/logo_dark.png" alt="" height="24" class="logo-lg">--}}
+                    {{--<img src="assets/images/logo_sm.png" alt="" height="24" class="logo-sm">--}}
+                {{--</a>--}}
+
+            </div>
+            <!-- End Logo container-->
+
+            <div class="menu-extras topbar-custom ">
+                <ul class="list-inline float-right mb-0">
+                    <li class="menu-item list-inline-item">
+                        <!-- Mobile menu toggle-->
+                        <a class="navbar-toggle nav-link">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                        <!-- End mobile menu toggle-->
+                    </li>
+                    <li class="list-inline-item dropdown notification-list">
+                        <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button"
+                           aria-haspopup="false" aria-expanded="false">
+                            <i class="dripicons-list noti-icon"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-lg" aria-labelledby="Preview">
+                            <!-- item-->
+                            <div class="dropdown-item noti-title">
+                                <h5>Notification</h5>
+                            </div>
+
+                            <!-- item-->
+                            <a href="{{route('categories.create')}}" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-success"><i class="dripicons-document"></i></div>
+                                <p class="notify-details">Categories</p>
+                            </a>
+                            <a href="{{route('files.create')}}" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-success"><i class="fa fa-upload"></i></div>
+                                <p class="notify-details">Upload</p>
+                            </a>
+                            <a href="{{route('subjects.create')}}" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-success"><i class="fa fa-file"></i></div>
+                                <p class="notify-details">Subjects</p>
+                            </a>
+
+
+                        </div>
+                    </li>
+
+                    <li class="list-inline-item dropdown notification-list">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
+                           aria-haspopup="false" aria-expanded="false">
+                            <img src="{{asset('theme/assets/images/users/avatar-1.jpg')}}" alt="user" class="rounded-circle">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
+                            <!-- item-->
+                            <div class="dropdown-item noti-title">
+                                <h5 class="text-overflow"><small>Welcome ! John</small> </h5>
+                            </div>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="zmdi zmdi-account-circle"></i> <span>Profile</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="zmdi zmdi-settings"></i> <span>Settings</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="zmdi zmdi-lock-open"></i> <span>Lock Screen</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="zmdi zmdi-power"></i> <span>Logout</span>
+                            </a>
+
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- end menu-extras -->
+
+            <div class="clearfix"></div>
+
+        </div> <!-- end container -->
     </div>
-    <!-- end container -->
+    <!-- end topbar-main -->
+
+    <div class="navbar-custom">
+        <div class="container">
+            <div id="navigation">
+                <!-- Navigation Menu-->
+                <ul class="navigation-menu">
+                    <li> <a href="{{ url('/') }}"><i class="fa fa-home" style="color: #F44336"></i>Home</a> </li>
+                @foreach($menus as $menu)
+                        <li> <a href="{{route('categories.show', $menu->id)}}"><i class="icon-book-open" style="color: #FF9800"></i>{{$menu->title}}</a> </li>
+                    @endforeach
+                    {{--<li> <a href="#"><i class="fi-book" style="color: #FFCA28"></i>Schemes of work</a> </li>--}}
+                    {{--<li> <a href="#"><i class="icon-graduation" style="color: #FFCA28"></i>Revision Papers</a> </li>--}}
+
+                </ul>
+                <!-- End navigation menu -->
+            </div> <!-- end #navigation -->
+        </div> <!-- end container -->
+    </div> <!-- end navbar-custom -->
+</header>
+<!-- End Navigation Bar-->
+
+
+<div class="wrapper">
+    <div class="container">
+
+        @yield('content')
+
+    </div> <!-- end container -->
 </div>
-<!-- End navbar -->
-@yield('content')
+<!-- end wrapper -->
 
 
-<!-- FOOTER -->
-<footer class="section bg-gray footer">
+<!-- Footer -->
+<footer class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <h5>Lugada</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-                <h5>Social</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Behance</a></li>
-                    <li><a href="#">Dribbble</a></li>
-                </ul>
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-                <h5>Support</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#">Help & Support</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                </ul>
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-                <h5>Contact</h5>
-                <address>
-                    795 Folsom Ave, Suite 600<br>
-                    San Francisco, CA 94107<br>
-                    <abbr title="Phone">P:</abbr> (123) 456-7890<br/>
-                    E: <a href="mailto:lugada@lugada.com">lugada@lugada.com</a>
-                </address>
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="footer-alt">
-                    <p class="pull-right">2015 © Lugada</p>
-                    <p class="logo"><i class="ion-social-buffer"></i>Lugada</p>
-                </div>
+            <div class="col-12 text-center">
+                {{ Date('Y') }} © Imara Lib - Imarishwa.com
             </div>
         </div>
     </div>
 </footer>
-
-<!-- END FOOTER -->
-
+<!-- End Footer -->
 
 
+<!-- jQuery  -->
+<script src="{{asset('theme/assets/js/jquery.min.js')}}"></script>
+<script src="{{asset('theme/assets/js/tether.min.js')}}"></script><!-- Tether for Bootstrap -->
+<script src="{{asset('theme/assets/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('theme/assets/js/waves.js')}}"></script>
+<script src="{{asset('theme/assets/js/jquery.slimscroll.js')}}"></script>
+<script src="{{asset('theme/assets/js/jquery.scrollTo.min.js')}}"></script>
 
-<!-- js placed at the end of the document so the pages load faster -->
-<script src="{{asset('assets/js/jquery.js')}}"></script>
-<script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
-<!-- Jquery easing -->
-<script type="text/javascript" src="{{asset('assets/js/jquery.easing.1.3.min.js')}}"></script>
-<script src="{{asset('assets/js/SmoothScroll.js')}}"></script>
-<script src="{{asset('assets/js/wow.min.js')}}"></script>
-<!--flex slider plugin-->
-<script src="{{asset('assets/js/jquery.flexslider-min.js')}}" type="text/javascript"></script>
-<script type="text/javascript" src="{{asset('assets/js/jquery.magnific-popup.min.js')}}"></script>
+@yield('scripts')
+<script type="text/javascript" src="{{asset('theme/plugins/parsleyjs/parsley.min.js')}}"></script>
 
-
-<!--common script for all pages-->
-<script src="{{asset('assets/js/jquery.app.js')}}"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
-<script type="text/javascript">
-    $('.select').select2({
-        placeholder: 'Select an option'
-    });
-
-    $('#class').on('change', function (e) {
-        var cat_id = e.target.value;
-        alert(cat_id);
-        $.get('/subcat?cat_id=' + cat_id, function (data) {
-            $('#subject').empty();
-            $.each(data, function (index, subcatObj) {
-                $('#subject').append('<option value="' + subcatObj.id + '">' + subcatObj.title + '</option>');
-
-            });
-
-        });
-    });
-</script>
-
+<!-- App js -->
+<script src="{{asset('theme/assets/js/jquery.core.js')}}"></script>
+<script src="{{asset('theme/assets/js/jquery.app.js')}}"></script>
 
 </body>
-
 </html>

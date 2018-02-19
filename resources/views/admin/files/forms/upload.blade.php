@@ -1,8 +1,7 @@
 
-<div class="row">
     <div class="form-group">
         {!! Form::label('title', 'Name') !!}
-        {!!  Form::text('title',null, array('class' => 'form-control','placeholder'=>'eg: 103', 'required'))   !!}
+        {!!  Form::text('title',null, array('class' => 'form-control','placeholder'=>'File name', 'required'))   !!}
     </div>
     <div class="form-group">
         {!! Form::label('type', 'Type') !!}
@@ -29,9 +28,8 @@
         </select>
     </div>
     <div class="form-group">
-        {!! Form::label('file', 'File') !!}
-        {!!  Form::file('file',null, array('class' => 'form-control', 'required'))   !!}
+        {!! Form::label('file', 'File (doc / pdf)') !!}
+        <input type="file" id="test" name="test" class="form-control" accept=".pdf,.doc"/>
     </div>
 
-</div>
 

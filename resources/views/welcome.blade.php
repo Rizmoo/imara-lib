@@ -1,97 +1,96 @@
 @extends('layouts.base')
+@section('styles')
+    <link href="{{asset('theme/plugins/slick-slider/slick.css')}}" rel="stylesheet" />
+    <link href="{{asset('theme/plugins/slick-slider/slick-theme.css')}}" rel="stylesheet" />
+@endsection
 
 @section('content')
-    <!-- HOME -->
-    <section class="home bg-dark">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    <div class="home-wrapper">
-                        <h1 class="animated fadeInDown wow" data-wow-delay=".1s">Professional Landing Page Template</h1>
-                        <h4 class="animated fadeInDown wow" data-wow-delay=".2s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat arcu ut orci porta, eget porttitor felis suscipit.<br/> Sed a nisl ullamcorper, tempus augue at, rutrum lacus. Duis et turpis eros.</h4>
-                        <a href="#" class="btn btn-custom btn-rnd animated fadeInDown wow" data-wow-delay=".4s">Learn more</a>
-                        <div class="clearfix"></div>
-                        <a href="http://vimeo.com/99025203" class="video-btn btn popup-video animated fadeInDown wow" data-wow-delay=".6s"><i class="ion-play"></i>Watch Video</a>
+    <div class="row">
+        <div class="col-12">
+            <div class="card-box">
+                <div class="fade-slider slider ">
+                    <div>
+                        <img src="{{asset('theme/assets/images/big/img-2.jpg')}}" alt="slider-img" class="img-fluid">
+                    </div>
+                    <div>
+                        <img src="{{asset('theme/assets/images/big/img-1.jpg')}}" alt="slider-img" class="img-fluid">
+                    </div>
+                    <div>
+                        <img src="{{asset('theme/assets/images/big/img-3.jpg')}}" alt="slider-img" class="img-fluid">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- END HOME -->
+        </div><!-- end col -->
+    </div>
+    <div class="container text-center">
 
-    <section class="section bg-gray" id="services">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    <h1 class="title zoomIn animated wow animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: zoomIn;">Best Services</h1>
-                    <p class="sub-title zoomIn animated wow animated" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: zoomIn;">Constituto voluptatibus mei ex. Eum soleat lorem Ipsum is simply dummy<br> text of the printing and typesetting industry. </p>
-                </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="title">Who are we ?</h2>
+                <p class="slogan">
+                    Imara lib is an online resource provider for scholars in kenya.
+                </p>
             </div>
+        </div> <!-- End row -->
 
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="service-item animated fadeInLeft wow animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
-                        <i class="ion-social-buffer"></i>
-                        <div class="service-detail">
-                            <h4>Strategy Solutions</h4>
-                            <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
-                        </div> <!-- /service-detail -->
-                    </div> <!-- /service-item -->
-                </div> <!-- /col -->
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="features-2">
+                    <img class="icon-colored" src="{{asset('theme/assets/images/icons/share.svg')}}" alt="">
+                </div>
+                <div>
+                    <h4>Responsive Design</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div> <!-- end col -->
 
-                <div class="col-sm-4">
-                    <div class="service-item animated fadeInDown wow animated" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInDown;">
-                        <i class="ion-ipad"></i>
-                        <div class="service-detail">
-                            <h4>Digital Design</h4>
-                            <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
-                        </div> <!-- /service-detail -->
-                    </div> <!-- /service-item -->
-                </div> <!-- /col -->
+            <div class="col-sm-4">
+                <div class="features-2">
+                    <img class="icon-colored" src="{{asset('theme/assets/images/icons/graduation_cap.svg')}}" alt="">
+                </div>
+                <div>
+                    <h4>Clean Code</h4>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Ut enim ad minim veniam, quis.</p>
+                </div>
+            </div> <!-- end col -->
 
-                <div class="col-sm-4">
-                    <div class="service-item animated fadeInRight wow animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
-                        <i class="ion-wand"></i>
-                        <div class="service-detail">
-                            <h4>SEO</h4>
-                            <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
-                        </div> <!-- /service-detail -->
-                    </div> <!-- /service-item -->
-                </div> <!-- /col -->
-            </div> <!--end row -->
+            <div class="col-sm-4">
+                <div class="features-2">
+                    <img class="icon-colored" src="{{asset('theme/assets/images/icons/reading.svg')}}" alt="">
+                </div>
+                <div>
+                    <h4>Easy Customize</h4>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Ut enim ad minim veniam.</p>
+                </div>
+            </div> <!-- end col -->
 
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="service-item animated fadeInLeft wow animated" data-wow-delay=".7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInLeft;">
-                        <i class="ion-coffee"></i>
-                        <div class="service-detail">
-                            <h4>Graphic Design</h4>
-                            <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
-                        </div> <!-- /service-detail -->
-                    </div> <!-- /service-item -->
-                </div> <!-- /col -->
+        </div> <!-- End row -->
 
-                <div class="col-sm-4">
-                    <div class="service-item animated fadeInUp wow animated" data-wow-delay=".9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
-                        <i class="ion-stats-bars"></i>
-                        <div class="service-detail">
-                            <h4>Analystics</h4>
-                            <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
-                        </div> <!-- /service-detail -->
-                    </div> <!-- /service-item -->
-                </div> <!-- /col -->
+        <div class="row card-box">
+           <div class="col-lg-4">
+                        <div class="card-box ribbon-box">
+                            <div class="ribbon ribbon-custom">Custom Ribbon</div>
+                            <p class="m-b-0">Quisque nec turpis at urna dictum luctus. Suspendisse convallis dignissim eros at volutpat. In egestas mattis dui. Aliquam mattis dictum aliquet. Nulla sapien mauris, eleifend et sem ac, commodo dapibus odio.</p>
+                        </div>
+                    </div>
+            <div class="col-lg-4">
+                        <div class="card-box ribbon-box">
+                            <div class="ribbon ribbon-primary">Primary Ribbon</div>
+                            <p class="m-b-0">Quisque nec turpis at urna dictum luctus. Suspendisse convallis dignissim eros at volutpat. In egestas mattis dui. Aliquam mattis dictum aliquet. Nulla sapien mauris, eleifend et sem ac, commodo dapibus odio.</p>
+                        </div>
+                    </div>
+            <div class="col-lg-4">
+                        <div class="card-box ribbon-box">
+                            <div class="ribbon ribbon-success">Success Ribbon</div>
+                            <p class="m-b-0">Quisque nec turpis at urna dictum luctus. Suspendisse convallis dignissim eros at volutpat. In egestas mattis dui. Aliquam mattis dictum aliquet. Nulla sapien mauris, eleifend et sem ac, commodo dapibus odio.</p>
+                        </div>
+                    </div>
+         </div>
 
-                <div class="col-sm-4">
-                    <div class="service-item animated fadeInRight wow animated" data-wow-delay="1.1s" style="visibility: visible; animation-delay: 1.1s; animation-name: fadeInRight;">
-                        <i class="ion-help-buoy"></i>
-                        <div class="service-detail">
-                            <h4>Dedicated Support</h4>
-                            <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
-                        </div> <!-- /service-detail -->
-                    </div> <!-- /service-item -->
-                </div> <!-- /col -->
-            </div> <!-- end row -->
-        </div>
-    </section>
+    </div>
+@endsection
+
+@section('scripts')
+    <script src="{{asset('theme/plugins/slick-slider/slick.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('theme/assets/pages/jquery.slider.init.js')}}"></script>
 @endsection
